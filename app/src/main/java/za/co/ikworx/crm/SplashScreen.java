@@ -11,14 +11,15 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
        // this.requestWindowFeature(this.FEATURE_NO_TITLE);
-
+        //this hides the title bar
+        this.getSupportActionBar().hide();
         Thread myThread = new Thread(){
             @Override
 
             public void run(){
 
                 try{
-                    sleep(3000);
+                    sleep(4000);
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     finish();
