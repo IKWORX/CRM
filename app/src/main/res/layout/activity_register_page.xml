@@ -44,7 +44,12 @@
         android:hint="Surname"
         android:inputType="textPersonName" />
 
-    <EditText
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/droplistRoles"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v7.widget.AppCompatSpinner>
+
+            <EditText
         android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,7 +65,15 @@
         android:hint="Phone number"
         android:inputType="phone" />
 
-    <EditText
+            <EditText
+                android:id="@+id/txtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPersonName" />
+
+            <EditText
         android:id="@+id/txtHomeAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,31 +81,29 @@
         android:hint="Home Address"
         android:inputType="textPostalAddress" />
 
-    <EditText
-        android:id="@+id/txtHomeAddress2"
+            <EditText
+        android:id="@+id/txtCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Address line 2"
+        android:hint="City"
         android:inputType="textPostalAddress" />
 
-    <EditText
-        android:id="@+id/txtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/txtPostalCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Postal Code" />
 
-    <EditText
-        android:id="@+id/txtPassword2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPersonName" />
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/droplistCountry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="select a country"></android.support.v7.widget.AppCompatSpinner>
 
-    <Button
+            <Button
         android:id="@+id/btnConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
