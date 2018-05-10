@@ -2,11 +2,11 @@ package za.co.ikworx.crm;
 
 public class Utility {
 
-    public String getIP() {
+    public static String getIP() {
         return IP;
     }
 
-    private String IP="http://192.168.176.33/androidDB/";
+    public static String IP="http://192.168.176.33/androidDB/";
     private String username;
 
     public String getUsername() {
