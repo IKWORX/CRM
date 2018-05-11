@@ -72,7 +72,7 @@ TextView textView;
             // Create a progressdialog
             mProgressDialog = new ProgressDialog(user_main.this);
             // Set progressdialog title
-            mProgressDialog.setTitle("Getting your places");
+            mProgressDialog.setTitle("Loading Customers");
             // Set progressdialog message
             mProgressDialog.setMessage("Loading...");
             mProgressDialog.setIndeterminate(false);

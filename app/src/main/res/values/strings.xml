@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Welcome to the CRM system</string>
+    <string name="app_name">CRM</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -24,4 +24,7 @@
     <string name="submit">SUBMIT</string>
     <string name="back">BACK</string>
     <string name="title_activity_view_course">view_course</string>
+
+    <string name="loading">Please wait Loading…</string>
+    <string name="new_product">New</string>
 </resources>

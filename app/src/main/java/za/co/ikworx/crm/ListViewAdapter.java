@@ -90,7 +90,7 @@ public class ListViewAdapter extends BaseAdapter {
 			public void onClick(View arg0) {
 				// Get the position
 				resultp = data.get(position);
-				Intent intent = new Intent(context,view_course.class);
+				Intent intent = new Intent(context,Product_main.class);
 				// Pass all data rank
 				intent.putExtra("name", resultp.get("name"));
 				//intent.putExtra("email",resultp.get("email"));
