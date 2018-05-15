@@ -26,8 +26,8 @@ public class Register_page extends AppCompatActivity {
     private EditText etName, etSurname, etEmails, etPassword, etAddress, etCity, etPostalCode;
 
     RequestQueue requestQueue;
-    String insertUrl = "192.168.172.33/androidDB/insertRegisterPage.php";
-    String showUrl = "192.168.172.33/androidDB/insertRegisterPage.php";
+    String insertUrl = "http://192.168.176.33/androidDB/insertRegisterPage.php";
+    String showUrl = "http://192.168.176.33/androidDB/insertRegisterPage.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +67,7 @@ public class Register_page extends AppCompatActivity {
                         parameters.put("S_Emails", etEmails.getText().toString());
                         parameters.put("S_Password", etPassword.getText().toString());
                         parameters.put("Address", etAddress.getText().toString());
-                        parameters.put("Postal_code", etCity.getText().toString());
+                        parameters.put("city", etCity.getText().toString());
                         parameters.put("Postal_code", etPostalCode.getText().toString());
 
                         return parameters;
