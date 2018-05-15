@@ -25,6 +25,7 @@
     <string name="back">BACK</string>
     <string name="title_activity_view_course">view_course</string>
 
+
     <string name="loading">Please wait Loading…</string>
     <string name="new_product">New</string>
 </resources>
