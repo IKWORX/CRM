@@ -70,8 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Password"
-                android:inputType="textPersonName" />
+                android:inputType="textPassword"
+                android:hint="Password"/>
 
             <EditText
         android:id="@+id/txtHomeAddress"
@@ -112,7 +112,6 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 </LinearLayout>
 
