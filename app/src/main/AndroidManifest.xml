@@ -17,34 +17,28 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SplashScreen"
-            android:label=""></activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Register_page" >
+            android:label="" />
+        <activity android:name=".Manual_registration">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Add_product">
+
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Register_page" />
         <activity
             android:name=".user_main"
             android:label="Customers"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Product_main"
             android:label="Product"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:theme="@style/AppTheme.Dark" >
-   </activity>
-        <activity android:name=".Main2Activity">
-
-        </activity>
     </application>
 
 </manifest>

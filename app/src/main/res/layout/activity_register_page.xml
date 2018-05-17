@@ -44,10 +44,10 @@
         android:hint="Surname"
         android:inputType="textPersonName" />
 
-            <android.support.v7.widget.AppCompatSpinner
+            <Spinner
                 android:id="@+id/droplistRoles"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></android.support.v7.widget.AppCompatSpinner>
+                android:layout_height="match_parent"></Spinner>
 
             <EditText
         android:id="@+id/txtEmail"
@@ -56,14 +56,6 @@
         android:ems="10"
         android:hint="Email Address"
         android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/txtPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Phone number"
-        android:inputType="phone" />
 
             <EditText
                 android:id="@+id/txtPassword"
@@ -97,11 +89,13 @@
                 android:inputType="textPersonName"
                 android:hint="Postal Code" />
 
-            <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/droplistCountry"
+            <EditText
+                android:id="@+id/txtCountry"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints="select a country"></android.support.v7.widget.AppCompatSpinner>
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Country Name" />
 
             <Button
         android:id="@+id/btnConfirm"

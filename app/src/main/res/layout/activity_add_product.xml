@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:textAlignment="center"
+    tools:context=".Add_product">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtAddProd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Product Range"
+                android:textSize="24sp"
+
+                />
+
+            <EditText
+                android:id="@+id/txtProdName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Product Name"
+                android:inputType="textPersonName"
+
+                />
+
+            <EditText
+                android:id="@+id/txtProdDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Product Duration"
+                android:inputType="textPersonName" />
+
+
+            <EditText
+                android:id="@+id/txtProdPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Product Price"
+                android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/btnAddProd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Product" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
