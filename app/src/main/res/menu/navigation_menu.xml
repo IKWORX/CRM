@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item android:id="@+id/nav_Home"
+        android:icon="@mipmap/baseline_home_black_24dp"
+        android:title="Home"
+        android:clickable="true"/>
+
+    <item android:id="@+id/nav_Report"
+        android:icon="@mipmap/line"
+        android:title="Report"
+        android:clickable="true"/>
+
+    <item android:id="@+id/Assign_Task"
+        android:icon="@mipmap/task"
+        android:title="task" />
+
+    <item android:id="@+id/Pending"
+        android:icon="@mipmap/icon_task"
+        android:title="Pending" />
+
+    <item android:id="@+id/Add_customer"
+        android:icon="@mipmap/people"
+        android:title="Add Customer" />
+
+</menu>
