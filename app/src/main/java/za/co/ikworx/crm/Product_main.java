@@ -1,14 +1,20 @@
 package za.co.ikworx.crm;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 
@@ -27,10 +33,14 @@ import za.co.ikworx.crm.models.Product;
 
 import static za.co.ikworx.crm.Utility.IP;
 
-public class Product_main extends AppCompatActivity {
+public class Product_main extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener{
     ProductsAdapter productsAdapter;
     JSONObject jsonobject;
     JSONArray jsonarray;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
+    private android.widget.Toolbar mToolbar;
 
     ArrayList<Product> products;
 
@@ -40,6 +50,23 @@ public class Product_main extends AppCompatActivity {
         setContentView(R.layout.product_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        NavigationView mNavigationView =  findViewById(R.id.Drawer);
+
+        if (mNavigationView != null) {
+            mNavigationView.setNavigationItemSelectedListener(this);
+        }
+
+
+        mDrawerLayout = findViewById(R.id.product);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         //Bind RecyclerView from layout to recyclerViewProducts object
         RecyclerView recyclerViewProducts = findViewById(R.id.recyclerViewProducts);
@@ -115,7 +142,28 @@ public class Product_main extends AppCompatActivity {
         }, 2000);
 
     }*/
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        if(mToggle.onOptionsItemSelected(item))
+            return true;
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.nav_Home)
+        {
+            Intent myIntent = new Intent(Product_main.this, user_main.class);
+            // myIntent.putExtra("key", value); //Optional parameters
+            Product_main.this.startActivity(myIntent);
+
+        }
+        return false;
+    }
     private class DownloadJSON extends AsyncTask<Void, Void, Void> {
 
         @Override

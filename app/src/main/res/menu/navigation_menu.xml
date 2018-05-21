@@ -5,12 +5,14 @@
     <item android:id="@+id/nav_Home"
         android:icon="@mipmap/baseline_home_black_24dp"
         android:title="Home"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"/>
 
     <item android:id="@+id/nav_Report"
         android:icon="@mipmap/line"
         android:title="Report"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"/>
 
     <item android:id="@+id/Assign_Task"
         android:icon="@mipmap/task"

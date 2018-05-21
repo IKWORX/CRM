@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ikworxlogo64"
+        android:icon="@drawable/ikworxlogo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -18,12 +18,17 @@
         <activity
             android:name=".SplashScreen"
             android:label=""></activity>
-        <activity android:name=".MainActivity" />
         <activity android:name=".Register_page" />
         <activity
             android:name=".user_main"
-            android:label="Customers"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="Customers">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".Product_main"
             android:label="Product"
@@ -31,16 +36,23 @@
 
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:theme="@style/AppTheme.Dark" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".Navigation"
+             >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
-        <activity android:name=".Main2Activity">
+         </activity>
+
+        <activity
+            android:name=".Login.MainActivity"
+            android:label="@string/app_name" >
 
         </activity>
+        <activity android:name=".Login.LoginActivity" >
+
+        </activity>
+        <activity android:name=".Login.SignupActivity" />
+
+
+
     </application>
 
 </manifest>

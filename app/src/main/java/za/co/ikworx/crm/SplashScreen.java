@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import za.co.ikworx.crm.Login.MainActivity;
+
 public class SplashScreen extends AppCompatActivity {
 
     @Override

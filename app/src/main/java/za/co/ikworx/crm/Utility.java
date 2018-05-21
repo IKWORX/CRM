@@ -7,25 +7,35 @@ public class Utility {
     }
 
     public static String IP="http://192.168.176.33/androidDB/";
-    private String username;
+    private static String username1;
 
-    public String getUsername() {
-        return username;
+    private static int status;
+
+    public static int getStatus() {
+        return status;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public static void setStatus(int status) {
+        Utility.status = status;
     }
 
-    public String getPassword() {
-        return password;
+    public static String getUsername() {
+        return username1;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public  static void setUsername(String username) {
+        username1 = username;
     }
 
-    private String password;
+    public static String getPassword() {
+        return password1;
+    }
+
+    public static void setPassword(String password) {
+        password1 = password;
+    }
+
+    private static String password1;
 
 
 

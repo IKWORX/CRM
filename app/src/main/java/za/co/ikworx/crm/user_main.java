@@ -11,13 +11,18 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,8 +37,13 @@ import java.util.HashMap;
 import static za.co.ikworx.crm.Utility.IP;
 
 
-public class user_main extends AppCompatActivity {
+public class user_main extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener{
     // Declare Variables
+
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
+    private Toolbar mToolbar;
     JSONObject jsonobject;
     JSONArray jsonarray;
     SeekBar seekBar;
@@ -54,6 +64,19 @@ TextView textView;
         setContentView(R.layout.activity_user_main);
         // email.setEmail(getIntent().getExtras().getString("email"));
 
+        NavigationView mNavigationView =  findViewById(R.id.Drawer);
+
+        if (mNavigationView != null) {
+            mNavigationView.setNavigationItemSelectedListener(this);
+        }
+
+
+        mDrawerLayout = findViewById(R.id.listvalue);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         new DownloadJSON().execute();
@@ -61,7 +84,28 @@ TextView textView;
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        if(mToggle.onOptionsItemSelected(item))
+            return true;
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.nav_Home)
+        {
+            Intent myIntent = new Intent(user_main.this, user_main.class);
+            // myIntent.putExtra("key", value); //Optional parameters
+            user_main.this.startActivity(myIntent);
+
+        }
+        return false;
+    }
 
     // DownloadJSON AsyncTask
     private class DownloadJSON extends AsyncTask<Void, Void, Void> {
