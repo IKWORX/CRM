@@ -1,4 +1,4 @@
-package za.co.ikworx.crm;
+package za.co.ikworx.crm.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import za.co.ikworx.crm.Product_main;
+import za.co.ikworx.crm.R;
 import za.co.ikworx.crm.models.productModel;
 
 import static za.co.ikworx.crm.Utility.getIP;
@@ -94,8 +96,8 @@ public class ListViewAdapter extends BaseAdapter {
 				resultp = data.get(position);
 				Intent intent = new Intent(context,Product_main.class);
 				// Pass all data rank
-				productModel.setCustID(resultp.get("fullname"));
-				productModel.setCustname(resultp.get("ID"));
+				productModel.setCustID(resultp.get("ID"));
+				productModel.setCustname(resultp.get("fullname"));
 				intent.putExtra("name", resultp.get("name"));
 				//intent.putExtra("email",resultp.get("email"));
 				// Pass all data country

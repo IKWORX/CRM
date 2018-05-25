@@ -1,6 +1,7 @@
 package za.co.ikworx.crm.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,9 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import za.co.ikworx.crm.confirmPage;
 import za.co.ikworx.crm.models.Product;
+import za.co.ikworx.crm.models.productModel;
 
 public class ProductsAdapter extends RecyclerView.Adapter {
     List<Product> mProducts;
@@ -82,7 +85,13 @@ public class ProductsAdapter extends RecyclerView.Adapter {
                 @Override
                 public void onClick(View view) {
                     // user selected product now you can show details of that product
+                    Intent intent = new Intent(mContext, confirmPage.class);
+                    productModel.setProdID(currentProduct.getID());
+                    productModel.setProdName(currentProduct.getProductName());
                     Toast.makeText(mContext, "Selected "+currentProduct.getProductName(), Toast.LENGTH_SHORT).show();
+                    productModel.setPicUrl(currentProduct.getImageResourceId());
+                    mContext.startActivity(intent);
+
                 }
             });
         }

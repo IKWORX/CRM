@@ -66,8 +66,9 @@
             android:id="@+id/custname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/deleteBtn"
-            android:layout_alignTop="@+id/productNAme"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/confirmID"
+            android:layout_marginBottom="152dp"
             android:text="Customer"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/colorAccent" />

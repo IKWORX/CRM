@@ -9,7 +9,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toolbar;
+
+import com.squareup.picasso.Picasso;
+
+import za.co.ikworx.crm.models.productModel;
 
 public class confirmPage extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener{
@@ -23,6 +29,15 @@ public class confirmPage extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_page);
+        TextView prodName = findViewById(R.id.productNAme);
+        TextView custName = findViewById(R.id.custname);
+
+        prodName.setText(productModel.getProdName());
+        custName.setText(productModel.getCustname());
+        ImageView image = findViewById(R.id.image);
+        Picasso.with(this).load(productModel.getPicUrl()).into(image);
+
+
 
         NavigationView mNavigationView =  findViewById(R.id.Drawer);
 
@@ -37,6 +52,9 @@ public class confirmPage extends AppCompatActivity implements
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //set default
+
     }
 
     @Override
@@ -73,5 +91,7 @@ public class confirmPage extends AppCompatActivity implements
         Intent myIntent = new Intent(confirmPage.this, user_main.class);
         // myIntent.putExtra("key", value); //Optional parameters
         confirmPage.this.startActivity(myIntent);
+
+        overridePendingTransition(R.anim.left_enter, R.anim.right_out);
     }
 }
