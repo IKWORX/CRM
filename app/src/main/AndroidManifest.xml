@@ -21,7 +21,9 @@
         <activity android:name=".Register_page" />
         <activity
             android:name=".user_main"
-            android:label="Customers"></activity>
+            android:label="Customers">
+
+        </activity>
         <activity
             android:name=".Product_main"
             android:label="Product"
@@ -36,6 +38,7 @@
         <activity android:name=".Login.SignupActivity" />
         <activity android:name=".confirmPage">
 
+
         </activity>
 
         <activity android:name=".Sales_main">
@@ -44,6 +47,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

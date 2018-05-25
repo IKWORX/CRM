@@ -15,6 +15,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import za.co.ikworx.crm.models.productModel;
+
 import static za.co.ikworx.crm.Utility.getIP;
 
 
@@ -92,6 +94,8 @@ public class ListViewAdapter extends BaseAdapter {
 				resultp = data.get(position);
 				Intent intent = new Intent(context,Product_main.class);
 				// Pass all data rank
+				productModel.setCustID(resultp.get("fullname"));
+				productModel.setCustname(resultp.get("ID"));
 				intent.putExtra("name", resultp.get("name"));
 				//intent.putExtra("email",resultp.get("email"));
 				// Pass all data country

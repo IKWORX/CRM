@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toolbar;
 
 public class confirmPage extends AppCompatActivity implements
@@ -30,7 +31,7 @@ public class confirmPage extends AppCompatActivity implements
         }
 
 
-        mDrawerLayout = findViewById(R.id.DrawerLayout);
+        mDrawerLayout = findViewById(R.id.confirm);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
         mDrawerLayout.addDrawerListener(mToggle);
@@ -59,5 +60,18 @@ public class confirmPage extends AppCompatActivity implements
 
         }
         return false;
+    }
+    //confirm button
+    public void  confirm(View view)
+    {
+
+    }
+
+    //cancel activity
+    public void  cancel(View view)
+    {
+        Intent myIntent = new Intent(confirmPage.this, user_main.class);
+        // myIntent.putExtra("key", value); //Optional parameters
+        confirmPage.this.startActivity(myIntent);
     }
 }
