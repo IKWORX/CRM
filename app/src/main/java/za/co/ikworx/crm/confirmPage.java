@@ -72,7 +72,7 @@ public class confirmPage extends AppCompatActivity implements
 
         if (id == R.id.nav_Home)
         {
-            Intent myIntent = new Intent(confirmPage.this, user_main.class);
+            Intent myIntent = new Intent(confirmPage.this, customer_view.class);
             // myIntent.putExtra("key", value); //Optional parameters
             confirmPage.this.startActivity(myIntent);
 
@@ -88,7 +88,7 @@ public class confirmPage extends AppCompatActivity implements
     //cancel activity
     public void  cancel(View view)
     {
-        Intent myIntent = new Intent(confirmPage.this, user_main.class);
+        Intent myIntent = new Intent(confirmPage.this, customer_view.class);
         // myIntent.putExtra("key", value); //Optional parameters
         confirmPage.this.startActivity(myIntent);
 

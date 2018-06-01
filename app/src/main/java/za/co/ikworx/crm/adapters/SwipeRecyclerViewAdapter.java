@@ -2,7 +2,6 @@ package za.co.ikworx.crm.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,7 @@ import com.daimajia.swipe.adapters.RecyclerSwipeAdapter;
 import java.util.ArrayList;
 
 import za.co.ikworx.crm.R;
+import za.co.ikworx.crm.models.Customer_model;
 import za.co.ikworx.crm.models.Sales_model;
 
 public class SwipeRecyclerViewAdapter extends RecyclerSwipeAdapter<SwipeRecyclerViewAdapter.SimpleViewHolder> {
@@ -39,8 +39,12 @@ public class SwipeRecyclerViewAdapter extends RecyclerSwipeAdapter<SwipeRecycler
     public void onBindViewHolder(final SimpleViewHolder viewHolder, final int position) {
         final Sales_model item = salesList.get(position);
 
-        viewHolder.Name.setText(item.getS_name() + " - Row Position " + position);
+        viewHolder.Name.setText(item.getS_name());
         viewHolder.EmailId.setText(item.getS_email());
+        viewHolder.Surname.setText(item.getS_surname());
+        viewHolder.Role.setText(item.getS_role());
+        viewHolder.SalesID.setText(item.getSalesID());
+
 
        // Log.e(TAG, salesList.get(1));
 
@@ -90,7 +94,8 @@ public class SwipeRecyclerViewAdapter extends RecyclerSwipeAdapter<SwipeRecycler
         viewHolder.swipeLayout.getSurfaceView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, " Click : " + item.getS_name()+ " \n" + item.getS_email(), Toast.LENGTH_SHORT).show();
+                // + item.getS_surname()+ " \n"+ item.getS_role()+ " \n"+ item.getSalesID()
+                Toast.makeText(mContext, " Clicked : " + item.getS_name()+ " \n" + item.getS_email()+ " \n" + item.getS_role(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -146,20 +151,34 @@ public class SwipeRecyclerViewAdapter extends RecyclerSwipeAdapter<SwipeRecycler
         public SwipeLayout swipeLayout;
         public TextView Name;
         public TextView EmailId;
+        public TextView Surname;
+        public TextView Role;
+        public TextView SalesID;
         public TextView Delete;
         public TextView Edit;
         public TextView Share;
         public ImageButton btnLocation;
+
         public SimpleViewHolder(View itemView) {
             super(itemView);
 
             swipeLayout = (SwipeLayout) itemView.findViewById(R.id.swipe);
             Name = (TextView) itemView.findViewById(R.id.s_name);
             EmailId = (TextView) itemView.findViewById(R.id.s_email);
+            Surname = (TextView) itemView.findViewById(R.id.s_surname);
+            Role = (TextView) itemView.findViewById(R.id.s_role);
+            SalesID = (TextView) itemView.findViewById(R.id.s_employee_status);
             Delete = (TextView) itemView.findViewById(R.id.Delete);
             Edit = (TextView) itemView.findViewById(R.id.Edit);
             Share = (TextView) itemView.findViewById(R.id.Share);
             btnLocation = (ImageButton) itemView.findViewById(R.id.btnLocation);
         }
     }
+
+
+    public void filterList_sales(ArrayList<Sales_model> filteredList_sales){
+        salesList = filteredList_sales;
+        notifyDataSetChanged();
+    }
+
 }

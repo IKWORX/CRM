@@ -8,6 +8,11 @@
     android:textAlignment="center"
     tools:context=".Register_page">
 
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:id="@+id/salesDrawer"
+        android:layout_height="match_parent">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -136,5 +141,7 @@
         </LinearLayout>
 
     </ScrollView>
+
+    </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

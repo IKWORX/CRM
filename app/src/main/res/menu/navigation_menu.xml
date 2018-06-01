@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     >
-
+    <group android:id="@+id/grp1" android:checkableBehavior="single" >
     <item android:id="@+id/nav_Home"
         android:icon="@mipmap/baseline_home_black_24dp"
         android:title="Home"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"/>
+    </group>
 
+    <group android:id="@+id/grp2" android:checkableBehavior="single" >
     <item android:id="@+id/nav_Report"
         android:icon="@mipmap/line"
         android:title="Report"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"/>
+    </group>
 
+    <group android:id="@+id/grp3" android:checkableBehavior="single" >
     <item android:id="@+id/Assign_Task"
         android:icon="@mipmap/task"
         android:title="task" />
+    </group>
 
+    <group android:id="@+id/grp4" android:checkableBehavior="single" >
     <item android:id="@+id/Pending"
         android:icon="@mipmap/icon_task"
         android:title="Pending" />
+    </group>
 
+    <group android:id="@+id/grp5" android:checkableBehavior="single" >
     <item android:id="@+id/Add_customer"
         android:icon="@mipmap/people"
         android:title="Add Customer" />
+    </group>
 
 </menu>
