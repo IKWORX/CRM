@@ -28,6 +28,7 @@
         android:elevation="2dp"
         android:layout_weight="1"
         android:scrollbars="vertical" />
+
     <TextView
         android:id="@+id/empty_view"
         android:layout_width="match_parent"
