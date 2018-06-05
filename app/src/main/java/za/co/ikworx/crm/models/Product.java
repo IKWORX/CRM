@@ -1,6 +1,6 @@
 package za.co.ikworx.crm.models;
 
-import static za.co.ikworx.crm.Utility.IP;
+import static za.co.ikworx.crm.Utility.Utility.IP;
 
 /**
  * Created by amardeep on 1/4/2018.

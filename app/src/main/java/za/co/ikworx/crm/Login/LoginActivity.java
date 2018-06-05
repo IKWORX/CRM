@@ -2,7 +2,6 @@ package za.co.ikworx.crm.Login;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -21,12 +20,12 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import za.co.ikworx.crm.R;
-import za.co.ikworx.crm.Utility;
+import za.co.ikworx.crm.Utility.Utility;
 import za.co.ikworx.crm.httpGet;
 import za.co.ikworx.crm.user_main;
 
-import static za.co.ikworx.crm.Utility.getIP;
-import static za.co.ikworx.crm.Utility.setStatus;
+import static za.co.ikworx.crm.Utility.Utility.getIP;
+import static za.co.ikworx.crm.Utility.Utility.setStatus;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";

@@ -1,6 +1,5 @@
 package za.co.ikworx.crm;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -12,14 +11,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.Toolbar;
-
-import com.daimajia.swipe.util.Attributes;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,11 +24,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import za.co.ikworx.crm.adapters.CustomersAdapter;
 import za.co.ikworx.crm.models.Customer_model;
 import za.co.ikworx.crm.models.productModel;
 
-import static za.co.ikworx.crm.Utility.getIP;
+import static za.co.ikworx.crm.Utility.Utility.getIP;
 
 public class customer_view_edit extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -54,7 +50,7 @@ public class customer_view_edit extends AppCompatActivity implements
        btnInsert = findViewById(R.id.btnEditCustomer);
 
         NavigationView mNavigationView =  findViewById(R.id.Drawer);
-
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         if (mNavigationView != null) {
             mNavigationView.setNavigationItemSelectedListener(this);
         }

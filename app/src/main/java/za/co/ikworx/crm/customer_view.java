@@ -12,14 +12,12 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,14 +30,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import za.co.ikworx.crm.adapters.CustomersAdapter;
 import za.co.ikworx.crm.adapters.CustomersAdapter_edit;
-import za.co.ikworx.crm.adapters.SwipeRecyclerViewAdapter;
 import za.co.ikworx.crm.models.Customer_model;
 
-import static za.co.ikworx.crm.Utility.getIP;
+import static za.co.ikworx.crm.Utility.Utility.getIP;
 
 public class customer_view extends AppCompatActivity implements
  NavigationView.OnNavigationItemSelectedListener{
@@ -66,6 +61,7 @@ protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_view);
         //Navigation Drawer
+    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         NavigationView mNavigationView =  findViewById(R.id.Drawer);
 
         editSearchCust = findViewById(R.id.custFilter);

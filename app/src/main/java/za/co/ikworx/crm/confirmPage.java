@@ -25,8 +25,7 @@ import org.json.JSONObject;
 import za.co.ikworx.crm.models.Product;
 import za.co.ikworx.crm.models.productModel;
 
-import static za.co.ikworx.crm.Utility.getIP;
-import static za.co.ikworx.crm.Utility.setStatus;
+import static za.co.ikworx.crm.Utility.Utility.getIP;
 
 public class confirmPage extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener{

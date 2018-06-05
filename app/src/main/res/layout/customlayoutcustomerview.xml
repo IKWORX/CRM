@@ -56,7 +56,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="265dp"
+        android:layout_height="wrap_content"
         android:background="?android:selectableItemBackground">
 
         <TextView
@@ -73,18 +73,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/cust_name"
-            android:layout_marginTop="26dp"
+            android:layout_centerHorizontal="true"
             android:text="Surname" />
-
-        <TextView
-            android:id="@+id/cust_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/cust_name"
-            android:layout_marginTop="84dp"
-            android:text="Email" />
 
         <TextView
             android:id="@+id/cust_phone"
@@ -92,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/cust_name"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="30dp"
             android:text="Phone" />
 
         <TextView
@@ -101,52 +91,26 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/cust_name"
-            android:layout_marginTop="112dp"
+            android:layout_marginTop="62dp"
             android:text="Company" />
-
-        <TextView
-            android:id="@+id/cust_designation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/cust_name"
-            android:layout_marginBottom="107dp"
-            android:text="Designation" />
-
-        <TextView
-            android:id="@+id/cust_Address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/cust_name"
-            android:layout_marginBottom="77dp"
-            android:text="Address" />
 
         <TextView
             android:id="@+id/cust_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/cust_name"
-            android:layout_marginBottom="51dp"
+            android:layout_marginTop="91dp"
             android:text="City" />
 
         <TextView
             android:id="@+id/cust_province"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/cust_name"
-            android:layout_marginBottom="25dp"
+            android:layout_marginTop="121dp"
             android:text="Province" />
-
-        <TextView
-            android:id="@+id/cust_comment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/cust_name"
-            android:text="Comment" />
 
     </RelativeLayout>
 

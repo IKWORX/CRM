@@ -1,4 +1,4 @@
-package za.co.ikworx.crm;
+package za.co.ikworx.crm.Utility;
 
 public class Utility {
 

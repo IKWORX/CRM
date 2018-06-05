@@ -27,7 +27,7 @@ import java.util.HashMap;
 
 import za.co.ikworx.crm.adapters.ListViewAdapter;
 
-import static za.co.ikworx.crm.Utility.IP;
+import static za.co.ikworx.crm.Utility.Utility.IP;
 
 
 public class user_main extends AppCompatActivity implements

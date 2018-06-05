@@ -51,14 +51,13 @@ public class CustomersAdapter_edit extends RecyclerSwipeAdapter<CustomersAdapter
 
         viewHolder.Name.setText(item.getCust_name());
         viewHolder.Surname.setText(item.getCust_surname());
-        viewHolder.Email.setText(item.getCust_email());
+
         viewHolder.Phone.setText(item.getCust_phone());
         viewHolder.Company.setText(item.getCust_company());
-        viewHolder.Designation.setText(item.getCust_designation());
-        viewHolder.Address.setText(item.getCust_address());
+
         viewHolder.City.setText(item.getCust_city());
         viewHolder.Province.setText(item.getCust_province());
-        viewHolder.Comment.setText(item.getCust_comment());
+
 
 
         // Log.e(TAG, salesList.get(1));
@@ -143,16 +142,15 @@ public class CustomersAdapter_edit extends RecyclerSwipeAdapter<CustomersAdapter
                 Toast.makeText(v.getContext(), "Clicked on Information " + viewHolder.Name.getText().toString(), Toast.LENGTH_SHORT).show();
                 CustomDialogClass cdd=new CustomDialogClass(activity);
                 cdd.setTitle("more info");
-                cdd.setName(viewHolder.Name.getText().toString());
-                cdd.setSurname(viewHolder.Surname.getText().toString());
-                cdd.setAddress(viewHolder.Address.getText().toString());
-                cdd.setCity(viewHolder.City.getText().toString());
-                cdd.setComany(viewHolder.Company.getText().toString());
-                cdd.setComment(viewHolder.Comment.getText().toString());
-                cdd.setPosition(viewHolder.Designation.getText().toString());
-                cdd.setEmail(viewHolder.Email.getText().toString());
-                cdd.setPhone(viewHolder.Phone.getText().toString());
-                cdd.setProvince(viewHolder.Province.getText().toString());
+                cdd.setName(item.getCust_name());
+                cdd.setSurname(item.getCust_surname());
+                cdd.setAddress(item.getCust_address());
+                cdd.setCity(item.getCust_city());
+                cdd.setComment(item.getCust_comment());
+                cdd.setPosition(item.getCust_designation());
+                cdd.setEmail(item.getCust_email());
+                cdd.setPhone(item.getCust_phone());
+                cdd.setProvince(item.getCust_province());
                 cdd.show();
             }
         });
@@ -202,14 +200,14 @@ public class CustomersAdapter_edit extends RecyclerSwipeAdapter<CustomersAdapter
         public SwipeLayout swipeLayout;
         public TextView Name;
         public TextView Surname;
-        public TextView Email;
+
         public TextView Phone;
         public TextView Company;
-        public TextView Designation;
-        public TextView Address;
+
+
         public TextView City;
         public TextView Province;
-        public TextView Comment;
+
         public TextView Delete;
         public TextView Edit;
         public ImageButton btnLocation;
@@ -220,14 +218,14 @@ public class CustomersAdapter_edit extends RecyclerSwipeAdapter<CustomersAdapter
             swipeLayout = (SwipeLayout) itemView.findViewById(R.id.swipeCustomer);
             Name = (TextView) itemView.findViewById(R.id.cust_name);
             Surname = (TextView) itemView.findViewById(R.id.cust_surname);
-            Email = (TextView) itemView.findViewById(R.id.cust_email);
+
             Phone = (TextView) itemView.findViewById(R.id.cust_phone);
             Company = (TextView) itemView.findViewById(R.id.cust_company);
-            Designation = (TextView) itemView.findViewById(R.id.cust_designation);
-            Address = (TextView) itemView.findViewById(R.id.cust_Address);
+
+
             City = (TextView) itemView.findViewById(R.id.cust_city);
             Province = (TextView) itemView.findViewById(R.id.cust_province);
-            Comment = (TextView) itemView.findViewById(R.id.cust_comment);
+
 
             Delete = (TextView) itemView.findViewById(R.id.cust_Delete);
             Edit = (TextView) itemView.findViewById(R.id.cust_Edit1);

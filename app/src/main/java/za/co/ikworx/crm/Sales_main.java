@@ -16,7 +16,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,10 +30,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import za.co.ikworx.crm.adapters.SwipeRecyclerViewAdapter;
-import za.co.ikworx.crm.models.Customer_model;
 import za.co.ikworx.crm.models.Sales_model;
 
-import static za.co.ikworx.crm.Utility.getIP;
+import static za.co.ikworx.crm.Utility.Utility.getIP;
 
 public class Sales_main extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener{

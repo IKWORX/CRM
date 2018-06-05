@@ -72,6 +72,27 @@
             android:text="Customer"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/leadID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/custname"
+            android:layout_marginEnd="45dp"
+            android:text="Loading..."
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/invoiceID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/leadID"
+            android:layout_alignTop="@+id/productNAme"
+            android:text="Loading..."
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent"/>
     </RelativeLayout>
 
 

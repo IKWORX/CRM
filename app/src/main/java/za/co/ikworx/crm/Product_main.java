@@ -1,10 +1,8 @@
 package za.co.ikworx.crm;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -15,7 +13,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 
 import org.json.JSONArray;
@@ -23,15 +20,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import za.co.ikworx.crm.adapters.ProductsAdapter;
 import za.co.ikworx.crm.helpers.EndlessScrollListener;
 import za.co.ikworx.crm.helpers.Space;
 import za.co.ikworx.crm.models.Product;
 
-import static za.co.ikworx.crm.Utility.IP;
+import static za.co.ikworx.crm.Utility.Utility.IP;
 
 public class Product_main extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener{

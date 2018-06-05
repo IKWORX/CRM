@@ -19,6 +19,7 @@
             android:name=".SplashScreen"
             android:label="" />
         <activity android:name=".customer_view">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,13 +40,14 @@
             android:label="@string/app_name" />
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".Login.SignupActivity" />
-        <activity android:name=".confirmPage" />
+        <activity android:name=".confirmPage">
+
+        </activity>
         <activity android:name=".Sales_main">
 
         </activity>
         <activity android:name=".edit_customer"></activity>
         <activity android:name=".customer_view_edit">
-
 
         </activity>
     </application>

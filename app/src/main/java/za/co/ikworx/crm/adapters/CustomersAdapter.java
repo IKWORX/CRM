@@ -195,14 +195,13 @@ public class CustomersAdapter extends RecyclerSwipeAdapter<CustomersAdapter.Simp
             swipeLayout = (SwipeLayout) itemView.findViewById(R.id.swipeCustomer);
             Name = (TextView) itemView.findViewById(R.id.cust_name);
             Surname = (TextView) itemView.findViewById(R.id.cust_surname);
-            Email = (TextView) itemView.findViewById(R.id.cust_email);
+
             Phone = (TextView) itemView.findViewById(R.id.cust_phone);
             Company = (TextView) itemView.findViewById(R.id.cust_company);
-            Designation = (TextView) itemView.findViewById(R.id.cust_designation);
-            Address = (TextView) itemView.findViewById(R.id.cust_Address);
+
             City = (TextView) itemView.findViewById(R.id.cust_city);
             Province = (TextView) itemView.findViewById(R.id.cust_province);
-            Comment = (TextView) itemView.findViewById(R.id.cust_comment);
+
 
             Delete = (TextView) itemView.findViewById(R.id.cust_Delete);
             Edit = (TextView) itemView.findViewById(R.id.cust_Edit);

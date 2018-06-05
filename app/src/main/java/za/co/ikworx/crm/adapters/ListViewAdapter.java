@@ -19,7 +19,7 @@ import za.co.ikworx.crm.Product_main;
 import za.co.ikworx.crm.R;
 import za.co.ikworx.crm.models.productModel;
 
-import static za.co.ikworx.crm.Utility.getIP;
+import static za.co.ikworx.crm.Utility.Utility.getIP;
 
 
 public class ListViewAdapter extends BaseAdapter {
