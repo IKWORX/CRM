@@ -10,8 +10,28 @@ public class Product {
     private String imageResourceId;
     private String duration;
     private String ID;
+    private String leadID;
+    private String invoiceID;
+
+    public String getLeadID() {
+        return leadID;
+    }
+
+    public void setLeadID(String leadID) {
+        this.leadID = leadID;
+    }
+
+    public String getInvoiceID() {
+        return invoiceID;
+    }
+
+    public void setInvoiceID(String invoiceID) {
+        this.invoiceID = invoiceID;
+    }
+
     private String productName;
     private String productPrice;
+
     private boolean isLoading = false;
     private boolean isNew = false;
 
