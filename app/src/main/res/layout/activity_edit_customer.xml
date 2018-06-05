@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:textAlignment="center"
-    tools:context=".edit_customer">
+    tools:context=".customer_view_edit">
 
     <android.support.v4.widget.DrawerLayout
-        android:id="@+id/customerDrawer"
+        android:id="@+id/customerDrawer1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -36,7 +36,6 @@
                     android:id="@+id/edit_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
                     android:text="Name" />
 
@@ -44,7 +43,6 @@
                     android:id="@+id/edit_surname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
                     android:text="Surname" />
 
@@ -52,7 +50,6 @@
                     android:id="@+id/edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
                     android:text="Email" />
 
@@ -60,7 +57,6 @@
                     android:id="@+id/edit_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
                     android:text="Phone" />
 
@@ -68,7 +64,6 @@
                     android:id="@+id/edit_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
                     android:text="Company" />
 
@@ -76,7 +71,6 @@
                     android:id="@+id/edit_designation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
                     android:text="Designation" />
 
@@ -84,7 +78,6 @@
                     android:id="@+id/edit_Address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:text="Address"
                     android:gravity="center"
                     />
@@ -93,23 +86,27 @@
                     android:id="@+id/edit_city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
                     android:text="City" />
 
                 <EditText
-                    android:id="@+id/edit_province"
+                    android:id="@+id/edit_Province"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
                     android:text="Province" />
+
+                <EditText
+                    android:id="@+id/edit_Country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Country" />
 
                 <EditText
                     android:id="@+id/edit_comment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:text="Comment"
                     android:gravity="center"
                     />
@@ -118,11 +115,13 @@
                     android:id="@+id/btnEditCustomer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="insert1"
                     android:text="Edit Customer" />
 
             </LinearLayout>
 
         </ScrollView>
+        <include layout="@layout/drawer"/>
 
     </android.support.v4.widget.DrawerLayout>
 

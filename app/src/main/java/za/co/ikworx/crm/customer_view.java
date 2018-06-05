@@ -35,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import za.co.ikworx.crm.adapters.CustomersAdapter;
+import za.co.ikworx.crm.adapters.CustomersAdapter_edit;
 import za.co.ikworx.crm.adapters.SwipeRecyclerViewAdapter;
 import za.co.ikworx.crm.models.Customer_model;
 
@@ -45,7 +46,7 @@ public class customer_view extends AppCompatActivity implements
 private TextView tvEmptyTextView;
 private RecyclerView mRecyclerView;
 private ArrayList<Customer_model> arraylist1;
-        CustomersAdapter adapter;
+        CustomersAdapter_edit adapter;
 
         ProgressDialog mProgressDialog;
 
@@ -108,7 +109,7 @@ protected void onCreate(Bundle savedInstanceState) {
         arraylist1 = new ArrayList<Customer_model>();
         new DownloadJSON().execute();
 
-        adapter = new CustomersAdapter(customer_view.this, arraylist1,customer_view.this);
+        adapter = new CustomersAdapter_edit(customer_view.this, arraylist1,customer_view.this);
         // ((SwipeRecyclerViewAdapter) adapter).setMode(Attributes.Mode.Single);
         // Set the adapter to the ListView
         mRecyclerView.setAdapter(adapter);
@@ -212,7 +213,7 @@ protected void onCreate(Bundle savedInstanceState) {
         JSONObject c = custome.getJSONObject(i);
 
 
-        Customer_model custModel = new Customer_model(c.getString("C_ID"),c.getString("C_Name"), c.getString("C_Surname"),c.getString("C_Email"),c.getString("C_Phone"),c.getString("C_Company"),c.getString("C_Designation"),c.getString("C_Address"),c.getString("C_City"),c.getString("C_Province"),c.getString("C_Comment"));
+        Customer_model custModel = new Customer_model(c.getString("C_ID"),c.getString("C_Name"), c.getString("C_Surname"),c.getString("C_Email"),c.getString("C_Phone"),c.getString("C_Company"),c.getString("C_Designation"),c.getString("C_Address"),c.getString("C_City"),c.getString("C_Province"),c.getString("C_Country"),c.getString("C_Comment"));
             arraylist1.add(custModel);
 
 
@@ -257,8 +258,8 @@ protected void onCreate(Bundle savedInstanceState) {
 //adapter.notifyDataSetChanged();
 
         // Close the progressdialog
-        adapter = new CustomersAdapter(customer_view.this, arraylist1,customer_view.this);
-        ((CustomersAdapter) adapter).setMode(Attributes.Mode.Single);
+        adapter = new CustomersAdapter_edit(customer_view.this, arraylist1,customer_view.this);
+        ((CustomersAdapter_edit) adapter).setMode(Attributes.Mode.Single);
         // Set the adapter to the ListView
         mRecyclerView.setAdapter(adapter);
         mProgressDialog.dismiss();

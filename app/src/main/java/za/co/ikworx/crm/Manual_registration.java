@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class Manual_registration extends AppCompatActivity {
 
-    Spinner spin, spin1;
+    Spinner spin, spin1, spin2;
     JSONObject jsonobject;
     JSONArray jsonarray;
     ArrayList<String> worldlist;
@@ -55,7 +55,7 @@ public class Manual_registration extends AppCompatActivity {
         txtAddress = (EditText) findViewById(R.id.txtCustHomeAddress);
         txtCity = (EditText) findViewById(R.id.txtCustCity);
         txtPostalCode = (EditText) findViewById(R.id.txtCustPostalCode);
-        txtCountry = (EditText) findViewById(R.id.txtCustCountry);
+        //txtCountry = (EditText) findViewById(R.id.txtCustCountry);
         txtCustComment = (EditText) findViewById(R.id.txtCustComment);
 
         //spinner manual addition
@@ -71,6 +71,12 @@ public class Manual_registration extends AppCompatActivity {
                 android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Status));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin1.setAdapter(myAdapter1);
+
+        spin2 = (Spinner) findViewById(R.id.droplistCountries);
+        ArrayAdapter<String> myAdapter2 = new ArrayAdapter<String>(Manual_registration.this,
+                android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Countries));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin2.setAdapter(myAdapter2);
 
 
 
@@ -119,7 +125,7 @@ public class Manual_registration extends AppCompatActivity {
                                 parameters.put("C_city", txtCity.getText().toString());
                                 parameters.put("C_Postal_code", txtPostalCode.getText().toString());
                                 parameters.put("C_Province",spin.getSelectedItem().toString());
-                                parameters.put("C_Country", txtCountry.getText().toString());
+                                parameters.put("C_Country", spin2.getSelectedItem().toString());
                                 parameters.put("C_Comment", txtCustComment.getText().toString());
                                 parameters.put("C_Status",spin1.getSelectedItem().toString());
 

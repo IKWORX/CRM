@@ -109,6 +109,46 @@ class httpGet {
         return response;
     }
 
+    public String makeServiceCall(String reqUrl,String user, String name, String surname, String email, String phone, String company, String designation, String address, String city, String province, String country, String comment) {
+        String response = null;
+        try {
+            URL url = new URL(reqUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            OutputStream output = conn.getOutputStream();
+            BufferedWriter bWritter = new BufferedWriter(new OutputStreamWriter(output, "UTF-8"));
+            String post_data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8") + "&"
+                    + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
+                    + URLEncoder.encode("surname", "UTF-8") + "=" + URLEncoder.encode(surname, "UTF-8") + "&"
+                    + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8") + "&"
+                    + URLEncoder.encode("phone", "UTF-8") + "=" + URLEncoder.encode(phone, "UTF-8") + "&"
+                    + URLEncoder.encode("company", "UTF-8") + "=" + URLEncoder.encode(company, "UTF-8") + "&"
+                    + URLEncoder.encode("designation", "UTF-8") + "=" + URLEncoder.encode(designation, "UTF-8") + "&"
+                    + URLEncoder.encode("address", "UTF-8") + "=" + URLEncoder.encode(address, "UTF-8") + "&"
+                    + URLEncoder.encode("city", "UTF-8") + "=" + URLEncoder.encode(city, "UTF-8") + "&"
+                    + URLEncoder.encode("province", "UTF-8") + "=" + URLEncoder.encode(province, "UTF-8") + "&"
+                    + URLEncoder.encode("country", "UTF-8") + "=" + URLEncoder.encode(country, "UTF-8") + "&"
+                    + URLEncoder.encode("comment", "UTF-8") + "=" + URLEncoder.encode(comment, "UTF-8");
+            bWritter.write(post_data);
+            bWritter.flush();
+            output.close();
+            // read the response
+            InputStream in = new BufferedInputStream(conn.getInputStream());
+            response = convertStreamToString(in);
+        } catch (MalformedURLException e) {
+            Log.e(TAG, "MalformedURLException: " + e.getMessage());
+        } catch (ProtocolException e) {
+            Log.e(TAG, "ProtocolException: " + e.getMessage());
+        } catch (IOException e) {
+            Log.e(TAG, "IOException: " + e.getMessage());
+        } catch (Exception e) {
+            Log.e(TAG, "Exception: " + e.getMessage());
+        }
+        return response;
+    }
+
 
     private String convertStreamToString(InputStream is) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));

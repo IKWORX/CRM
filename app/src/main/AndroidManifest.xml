@@ -19,9 +19,13 @@
             android:name=".SplashScreen"
             android:label="" />
         <activity android:name=".customer_view">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".Register_page"></activity>
+        <activity android:name=".Register_page" />
         <activity
             android:name=".user_main"
             android:label="Customers" />
@@ -37,13 +41,11 @@
         <activity android:name=".Login.SignupActivity" />
         <activity android:name=".confirmPage" />
         <activity android:name=".Sales_main">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".edit_customer">
+        <activity android:name=".edit_customer"></activity>
+        <activity android:name=".customer_view_edit">
+
 
         </activity>
     </application>
