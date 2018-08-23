@@ -148,6 +148,39 @@ class httpGet {
         }
         return response;
     }
+    public String makeServiceCall1(String reqUrl,String user, String saleID, String leadID, String prodPrice, String invoiceID, String ProdID) {
+        String response = null;
+        try {
+            URL url = new URL(reqUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            OutputStream output = conn.getOutputStream();
+            BufferedWriter bWritter = new BufferedWriter(new OutputStreamWriter(output, "UTF-8"));
+            String post_data = URLEncoder.encode("custID", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8") + "&"
+                    + URLEncoder.encode("saleID  ", "UTF-8") + "=" + URLEncoder.encode(saleID, "UTF-8") + "&"
+                    + URLEncoder.encode("leadID", "UTF-8") + "=" + URLEncoder.encode(leadID, "UTF-8") + "&"
+                    + URLEncoder.encode("invoice", "UTF-8") + "=" + URLEncoder.encode(invoiceID, "UTF-8") + "&"
+                    + URLEncoder.encode("prodPrice", "UTF-8") + "=" + URLEncoder.encode(prodPrice, "UTF-8") + "&"
+                    + URLEncoder.encode("prodID", "UTF-8") + "=" + URLEncoder.encode(ProdID, "UTF-8");
+            bWritter.write(post_data);
+            bWritter.flush();
+            output.close();
+            // read the response
+            InputStream in = new BufferedInputStream(conn.getInputStream());
+            response = convertStreamToString(in);
+        } catch (MalformedURLException e) {
+            Log.e(TAG, "MalformedURLException: " + e.getMessage());
+        } catch (ProtocolException e) {
+            Log.e(TAG, "ProtocolException: " + e.getMessage());
+        } catch (IOException e) {
+            Log.e(TAG, "IOException: " + e.getMessage());
+        } catch (Exception e) {
+            Log.e(TAG, "Exception: " + e.getMessage());
+        }
+        return response;
+    }
 
 
     private String convertStreamToString(InputStream is) {

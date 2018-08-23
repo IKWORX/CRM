@@ -29,6 +29,7 @@
                     android:text="Edit A Customer"
                     android:textSize="24sp"
                     android:gravity="center"
+                    android:textCursorDrawable="@drawable/cursor_color"
 
                     />
 
@@ -37,6 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:text="Name" />
 
                 <EditText
@@ -44,12 +46,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:text="Surname" />
 
                 <EditText
                     android:id="@+id/edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:gravity="center"
                     android:text="Email" />
 
@@ -57,6 +61,7 @@
                     android:id="@+id/edit_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:gravity="center"
                     android:text="Phone" />
 
@@ -64,6 +69,7 @@
                     android:id="@+id/edit_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:gravity="center"
                     android:text="Company" />
 
@@ -72,6 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:text="Designation" />
 
                 <EditText
@@ -79,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Address"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:gravity="center"
                     />
 
@@ -86,6 +94,7 @@
                     android:id="@+id/edit_city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:gravity="center"
                     android:text="City" />
 
@@ -93,6 +102,7 @@
                     android:id="@+id/edit_Province"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:gravity="center"
                     android:text="Province" />
 
@@ -101,12 +111,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:text="Country" />
 
                 <EditText
                     android:id="@+id/edit_comment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/cursor_color"
                     android:text="Comment"
                     android:gravity="center"
                     />

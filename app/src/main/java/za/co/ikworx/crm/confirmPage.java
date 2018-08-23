@@ -22,6 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import za.co.ikworx.crm.Utility.Utility;
 import za.co.ikworx.crm.models.Product;
 import za.co.ikworx.crm.models.productModel;
 
@@ -35,6 +36,10 @@ public class confirmPage extends AppCompatActivity implements
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private Toolbar mToolbar;
+    public  String LeadID;
+    public  String InvoiceID;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +100,7 @@ public class confirmPage extends AppCompatActivity implements
     //confirm button
     public void  confirm(View view)
     {
-
+        new insertData().execute();
     }
 
     //cancel activity
@@ -138,6 +143,8 @@ Product product = new Product();
 
                         product.setInvoiceID(c.getString("invoiceID"));
                         product.setLeadID(c.getString("leadID"));
+                        LeadID=c.getString("leadID");
+                        InvoiceID=c.getString("invoiceID");
 
                     }
 
@@ -178,6 +185,87 @@ Product product = new Product();
             leadID.setText(product.getLeadID());
             invoiceID.setText(product.getInvoiceID());
 
+
+            // Close the progressdialog
+
+        }
+    }
+
+    private class insertData extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            httpGet sh = new httpGet();
+
+            // arraylist = new ArrayList<HashMap<String, String>>();
+            // Making a request to url and getting response
+            String url = getIP() + "email_send.php";
+            Log.e(TAG, "Response from url: " + url);
+            Log.e(TAG, "Response from url: " + productModel.getCustID());
+            Log.e(TAG, "Response from url: " + Utility.getSalesID());
+            Log.e(TAG, "Response from url: " + LeadID);
+            Log.e(TAG, "Response from url: " + productModel.getPrice());
+            Log.e(TAG, "Response from url: " + InvoiceID);
+            Log.e(TAG, "Response from url: " + productModel.getProdID());
+
+            String jsonStr = sh.makeServiceCall1(url,productModel.getCustID(), Utility.getSalesID(),LeadID,productModel.getPrice(),InvoiceID,productModel.getProdID());
+            Log.e(TAG, "Response from url: " + jsonStr);
+            if (jsonStr != null) {
+                try {
+                    JSONObject jsonObj = new JSONObject(jsonStr);
+
+                    // Getting JSON Array node
+                    JSONArray custome = jsonObj.getJSONArray("server_response");
+                    // looping through All Contacts
+                    for (int i = 0; i < custome.length(); i++) {
+
+                        JSONObject c = custome.getJSONObject(i);
+
+                        Log.e(TAG, c.getString("message"));
+
+
+                    }
+
+                } catch (final JSONException e) {
+                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),
+                                    "Json parsing error: " + e.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+                }
+
+            } else {
+                Log.e(TAG, "Couldn't get json from server.");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Couldn't get json from server. Check LogCat for possible errors!",
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            return null;
+
+        }
+
+        @Override
+        protected void onPostExecute(Void args) {
+
+
+            new increment().execute();
 
             // Close the progressdialog
 

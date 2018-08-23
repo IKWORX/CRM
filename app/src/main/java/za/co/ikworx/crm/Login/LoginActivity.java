@@ -21,11 +21,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import za.co.ikworx.crm.R;
 import za.co.ikworx.crm.Utility.Utility;
+import za.co.ikworx.crm.customer_view;
 import za.co.ikworx.crm.httpGet;
 import za.co.ikworx.crm.user_main;
 
 import static za.co.ikworx.crm.Utility.Utility.getIP;
+import static za.co.ikworx.crm.Utility.Utility.setSalesID;
 import static za.co.ikworx.crm.Utility.Utility.setStatus;
+
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
@@ -127,7 +130,7 @@ new DownloadJSON().execute();
 
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
-        Intent myIntent = new Intent(this, user_main.class);
+        Intent myIntent = new Intent(this, customer_view.class);
         // myIntent.putExtra("key", value); //Optional parameters
         this.startActivity(myIntent);
     }
@@ -193,6 +196,7 @@ new DownloadJSON().execute();
 
                         setStatus(c.getInt("status"));
                              c.getString("message");
+                        setSalesID(c.getString("saleID"));
 
                         Log.e(TAG, c.getString("message"));
 

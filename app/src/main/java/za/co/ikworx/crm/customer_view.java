@@ -1,5 +1,6 @@
 package za.co.ikworx.crm;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -31,6 +32,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import za.co.ikworx.crm.Utility.Connectivity;
 import za.co.ikworx.crm.adapters.CustomersAdapter_edit;
 import za.co.ikworx.crm.models.Customer_model;
 
@@ -50,6 +52,7 @@ private ActionBarDrawerToggle mToggle;
 private Toolbar mToolbar;
 
 private EditText editSearchCust;
+private android.support.v7.app.AlertDialog alerts;
 
 ArrayAdapter<String> custArray;
 
@@ -103,7 +106,10 @@ protected void onCreate(Bundle savedInstanceState) {
 
 
         arraylist1 = new ArrayList<Customer_model>();
-        new DownloadJSON().execute();
+
+
+            new DownloadJSON().execute();
+
 
         adapter = new CustomersAdapter_edit(customer_view.this, arraylist1,customer_view.this);
         // ((SwipeRecyclerViewAdapter) adapter).setMode(Attributes.Mode.Single);

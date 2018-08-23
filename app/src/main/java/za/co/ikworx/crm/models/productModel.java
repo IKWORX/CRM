@@ -6,6 +6,15 @@ public class productModel {
     private static String prodID;
     private static String custname;
     private static String prodName;
+    private static String Price;
+
+    public static String getPrice() {
+        return Price;
+    }
+
+    public static void setPrice(String price) {
+        Price = price;
+    }
 
     public static String getCustID() {
         return custID;

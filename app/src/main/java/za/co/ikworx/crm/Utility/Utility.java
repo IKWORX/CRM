@@ -10,6 +10,9 @@ public class Utility {
     private static String username1;
 
     private static int status;
+    private static String salesID;
+
+
 
     public static int getStatus() {
         return status;
@@ -38,5 +41,11 @@ public class Utility {
     private static String password1;
 
 
+    public static String getSalesID() {
+        return salesID;
+    }
 
+    public static void setSalesID(String salesID) {
+        Utility.salesID = salesID;
+    }
 }

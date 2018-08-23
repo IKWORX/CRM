@@ -88,6 +88,7 @@ public class ProductsAdapter extends RecyclerView.Adapter {
                     Intent intent = new Intent(mContext, confirmPage.class);
                     productModel.setProdID(currentProduct.getID());
                     productModel.setProdName(currentProduct.getProductName());
+                    productModel.setPrice(currentProduct.getProductPrice());
                     Toast.makeText(mContext, "Selected "+currentProduct.getProductName(), Toast.LENGTH_SHORT).show();
                     productModel.setPicUrl(currentProduct.getImageResourceId());
                     mContext.startActivity(intent);

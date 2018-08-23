@@ -27,6 +27,8 @@ package za.co.ikworx.crm.Utility;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 
 /**
@@ -34,8 +36,10 @@ import android.telephony.TelephonyManager;
  * @author emil http://stackoverflow.com/users/220710/emil
  *
  */
-public class Connectivity {
-  
+public class Connectivity extends AppCompatActivity {
+
+
+
 	/**
 	 * Get the network info
 	 * @param context
@@ -51,8 +55,14 @@ public class Connectivity {
 	// * @param context
 	 * @return
 	 */
-	public static boolean isConnected(Context context){
+	public static boolean isConnected(Context context, AlertDialog alertDialog){
+
 	    NetworkInfo info = Connectivity.getNetworkInfo(context);
+	    if((info != null && info.isConnected()))
+		{
+			alertDialog.setMessage("you are not connected");
+			alertDialog.show();
+		}
 	    return (info != null && info.isConnected());
 	}
 	
